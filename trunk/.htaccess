@@ -1,6 +1,6 @@
 RewriteEngine on
 
-RewriteBase /notmybiz-nacho/web
+RewriteBase /notmybiz/web
 
 RewriteRule ^$ index.php [L,QSA]
 
