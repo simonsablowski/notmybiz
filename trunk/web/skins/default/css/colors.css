@@ -1,0 +1,100 @@
+/*html {
+	background-color: #dcdddc;
+}*/
+
+strong {
+	color: #690;
+}
+
+em {
+	color: #666;
+}
+
+caption, legend {
+	color: #000;
+}
+
+abbr, acronym {
+	border-bottom-color: #ccc;
+}
+
+code {
+	background-color: #ccc;
+}
+
+/*#document {
+	background-color: #fff;
+	border-color: #bbbfbb;
+}*/
+
+#head {
+	/*border-bottom-color: #666a66;*/
+	/*border-bottom-color: #f0f3f0;*/
+}
+
+#logo a {
+	color: #000;
+}
+
+#logo a em {
+	color: #6c0;
+}
+
+#body {
+	/*background-color: #fbfcfb;*/
+	background-color: #f6faf6;
+}
+
+#content h2 {
+	color: #666;
+}
+
+#content h3 {
+	color: #390;
+}
+
+#content a {
+	color: #390;
+}
+
+#foot {
+	/*border-top-color: #f0f3f0;*/
+}
+
+#meta_navigation .menu-item a {
+	color: #390;
+}
+
+#meta_navigation .nested-menu .menu-item a {
+	color: #000;
+}
+
+#copyright {
+	color: #000;
+}
+
+#copyright a {
+	color: #390;
+}
+
+.albums .album .preview_image img,
+.images .image img {
+	background-color: #ccc;
+	border-color: #ccc;
+}
+
+#overlay {
+	background-color: #000;
+}
+
+#container {
+	color: #fff;
+}
+
+.pagination .page, .pagination .page {
+	border-color: #ccc;
+}
+
+.controls .control {
+	border-color: #ccc;
+}
