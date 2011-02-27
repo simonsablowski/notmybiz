@@ -1,0 +1,51 @@
+#previous_link {
+	background: url('../img/previous.gif') no-repeat center;
+}
+
+#play_link {
+	background: url('../img/play.gif') no-repeat center;
+}
+
+#stop_link {
+	background: url('../img/stop.gif') no-repeat center;
+}
+
+#next_link {
+	background: url('../img/next.gif') no-repeat center;
+}
+
+#hide_link {
+	background: url('../img/hide.gif') no-repeat center;
+}
+
+.pagination a.first {
+	background: url('../img/first_page_activated.gif') no-repeat center;
+}
+
+.pagination a.previous {
+	background: url('../img/previous_page_activated.gif') no-repeat center;
+}
+
+.pagination a.next {
+	background: url('../img/next_page_activated.gif') no-repeat center;
+}
+
+.pagination a.last {
+	background: url('../img/last_page_activated.gif') no-repeat center;
+}
+
+.pagination span.first {
+	background: url('../img/first_page_deactivated.gif') no-repeat center;
+}
+
+.pagination span.previous {
+	background: url('../img/previous_page_deactivated.gif') no-repeat center;
+}
+
+.pagination span.next {
+	background: url('../img/next_page_deactivated.gif') no-repeat center;
+}
+
+.pagination span.last {
+	background: url('../img/last_page_deactivated.gif') no-repeat center;
+}
