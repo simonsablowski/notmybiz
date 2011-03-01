@@ -26,10 +26,12 @@
 							<h<? echo $isAlbum ? 3 : 2; ?>>
 								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><? echo $this->localize($Album->getTitle()); ?></a>
 							</h3>
-							<? if ($Album->getDescription()): ?>
-							<p><? echo $album->getDescription(); ?></p>
-							<? endif; ?>
-							<? if ($PreviewImage = $Album->getPreviewImage()): ?>
+<? if ($Album->getDescription()): ?>
+							<p>
+								<? echo $album->getDescription(); ?>
+							</p>
+<? endif; ?>
+<? if ($PreviewImage = $Album->getPreviewImage()): ?>
 							<div class="preview_image">
 								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($PreviewImage->getFileName()); ?>/?w=280&h=280&m=crop" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
 							</div>
@@ -63,6 +65,6 @@
 					</div>
 <? endif; ?>
 <? endif; ?>
-			<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/lightbox.js"></script>
-			<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/gallery.js"></script>
+					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/lightbox.js"></script>
+					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/gallery.js"></script>
 <? $this->displayView('components/footer.php'); ?>
