@@ -10,3 +10,12 @@
 		<link type="image/x-icon" href="<? echo $basePath; ?>favicon.ico" rel="shortcut icon"/>
 		<script type="text/javascript" src="<? echo $basePath; ?>js/mootools.js"></script>
 	</head>
+	<body>
+		<div id="document">
+			<div id="head">
+				<h1 id="logo">
+					<a href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>" title="<? echo $this->localize('notmybiz'); ?>"><? echo $this->localize('not<em>my</em>biz'); ?></a>
+				</h1>
+			</div>
+			<div id="body">
+				<div id="content">

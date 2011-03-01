@@ -1,13 +1,4 @@
 <? $this->displayView('components/header.php'); ?>
-	<body>
-		<div id="document">
-			<div id="head">
-				<h1 id="logo">
-					<a href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>" title="<? echo $this->localize('notmybiz'); ?>"><? echo $this->localize('not<em>my</em>biz'); ?></a>
-				</h1>
-			</div>
-			<div id="body">
-				<div id="content">
 <? $isAlbum = $Album instanceof GalleryAlbum; if ($isAlbum): ?>
 					<h2>
 <? foreach ($Album->getAncestors() as $Ancestor): ?>
@@ -16,6 +7,17 @@
 						<? echo $this->localize($Album->getTitle()); ?>
 
 					</h2>
+					<div id="gallery" style="display: none;">
+						<img id="current_image" src="" title="" alt=""/>
+						<p id="current_title"></p>
+						<p id="current_description"></p>
+						<div class="controls">
+							<a class="control" id="previous_link" href="#">&nbsp;</a>
+							<a class="control" id="play_link" href="#">&nbsp;</a><a class="control" id="stop_link" style="display: none;" href="#">&nbsp;</a>
+							<a class="control" id="next_link" href="#">&nbsp;</a>
+							<a class="control" id="hide_link" href="#">&nbsp;</a>
+						</div>
+					</div>
 <? endif; ?>
 <? if (count($Albums)): ?>
 					<ul class="albums">
@@ -29,7 +31,7 @@
 							<? endif; ?>
 							<? if ($PreviewImage = $Album->getPreviewImage()): ?>
 							<div class="preview_image">
-								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="http://notmybiz.com/imgproc/<? echo urldecode($PreviewImage->getFileName()); ?>/?w=280&h=280&m=crop" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
+								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($PreviewImage->getFileName()); ?>/?w=280&h=280&m=crop" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
 							</div>
 <? endif; ?>
 						</li>
@@ -40,43 +42,27 @@
 					<ul class="gallery images">
 <? foreach ($Images as $n => $Image): ?>
 						<li class="<? echo ($n + 1) % 2 ? 'odd' : 'even'; ?><? if (($n + 1) % 4 == 0) echo ' last-in-row'; ?> image">
-							<a href="http://notmybiz.com/imgproc/<? echo urldecode($Image->getFileName()); ?>/?h=500"><img src="http://notmybiz.com/imgproc/<? echo $Image->getFileName(); ?>/?w=200&amp;h=200&amp;m=crop" alt="<? echo $Image->getTitle(); ?>" title="<? echo $Image->getTitle(); ?>"/></a>
+							<a href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($Image->getFileName()); ?>/?h=500"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo $Image->getFileName(); ?>/?w=200&amp;h=200&amp;m=crop" alt="<? echo $Image->getTitle(); ?>" title="<? echo $Image->getTitle(); ?>"/></a>
 						</li>
 <? endforeach; ?>
 					</ul>
-<? endif; ?>
-				</div>
-			</div>
-			<div id="foot">
-				<p id="copyright">
-					<? echo $this->localize('&copy; 2004-2011 <a href="%s">notmybiz</a>', $this->getConfiguration('basePath')); ?>
+<? if ($pagination['last'] > 1): ?>
+					<div class="pagination">
+						<? if ($pagination['current'] != $pagination['first']): ?><a class="first page" href="?page=<? echo $pagination['first']; ?>">&nbsp;</a><? else: ?><span class="first page">&nbsp;</span><? endif; ?>
 
-				</p>
-				<ul id="meta_navigation">
-					<li class="menu-item">
-						<a class="external" href="http://motivado.com" title="motivado.com">motivado.com</a>
-					</li>
-					<li class="menu-item">
-						<a class="external" href="http://fbrccn.com" title="fbrccn.com">fbrccn.com</a>
-					</li>
-					<li class="menu-item">
-						<a class="external" href="http://simsab.de/en" title="simsab.de">simsab.de</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<script type="text/javascript">
-		<!--
-		var gaJsHost = 'https:' == document.location.protocol ? 'https://ssl.' : 'http://www.';
-		document.write(unescape('%3Cscript src="' + gaJsHost + 'google-analytics.com/ga.js" type="text/javascript"%3E%3C/script%3E'));
-		try {
-			var pageTracker = _gat._getTracker('UA-2644687-1');
-			pageTracker._initData();
-			pageTracker._trackPageview();
-		} catch (error) {
-			
-		}
-		//-->
-		</script>
-	</body>
+						<? if ($pagination['current'] != $pagination['previous']): ?><a class="previous page" href="?page=<? echo $pagination['previous']; ?>">&nbsp;</a><? else: ?><span class="previous page">&nbsp;</span><? endif; ?>
+
+<? foreach (range($pagination['first'], $pagination['last']) as $page): ?>
+						<? if ($pagination['current'] != $page): ?><a class="page" href="?page=<? echo $page; ?>"><? echo $page; ?></a><? else: ?><span class="page"><? echo $page; ?></span><? endif; ?>
+
+<? endforeach; ?>
+						<? if ($pagination['current'] != $pagination['next']): ?><a class="next page" href="?page=<? echo $pagination['next']; ?>">&nbsp;</a><? else: ?><span class="next page">&nbsp;</span><? endif; ?>
+
+						<? if ($pagination['current'] != $pagination['last']): ?><a class="last page" href="?page=<? echo $pagination['last']; ?>">&nbsp;</a><? else: ?><span class="last page">&nbsp;</span><? endif; ?>
+
+					</div>
+<? endif; ?>
+<? endif; ?>
+			<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/lightbox.js"></script>
+			<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/gallery.js"></script>
 <? $this->displayView('components/footer.php'); ?>

@@ -1,6 +1,10 @@
 <?php
 
 class GalleryAlbum extends Gallery {
+	protected static $defaultSorting = array(
+		'ParentId' => 'ascending',
+		'position' => 'ascending'
+	);
 	protected $fields = array(
 		'id',
 		'key',
@@ -50,10 +54,16 @@ class GalleryAlbum extends Gallery {
 		));
 	}
 	
-	public function getImages($imagesPerPage) {
+	public function getNumberImages() {
+		return GalleryImage::countAll(array(
+			'AlbumId' => $this->getId()
+		));
+	}
+	
+	public function getImages($limit = NULL) {
 		return GalleryImage::findAll(array(
 			'AlbumId' => $this->getId()
-		), NULL, $imagesPerPage);
+		), NULL, $limit);
 	}
 	
 	protected function loadPreviewImage() {
