@@ -2,11 +2,4 @@ RewriteEngine on
 
 RewriteBase /notmybiz/web
 
-RewriteRule ^$ index.php [L,QSA]
-
-RewriteCond $1 !^robots\.txt
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !=/favicon.ico
-
-RewriteRule ^([\w/-]+)(/)?$ index.php?query=Gallery_show_$1 [L,QSA]
+RewriteRule .* index.php
