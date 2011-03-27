@@ -5,7 +5,7 @@
 					<? echo $this->localize('&copy; 2004-2011 <a href="%s">notmybiz</a>', $this->getConfiguration('basePath')); ?>
 
 				</p>
-				<ul id="meta_navigation">
+				<ul id="menu">
 					<li class="menu-item">
 						<a class="external" href="http://motivado.com" title="motivado.com">motivado.com</a>
 					</li>
