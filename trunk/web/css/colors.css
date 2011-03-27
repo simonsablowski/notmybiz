@@ -1,7 +1,3 @@
-/*html {
-	background-color: #dcdddc;
-}*/
-
 strong {
 	color: #690;
 }
@@ -22,16 +18,6 @@ code {
 	background-color: #ccc;
 }
 
-/*#document {
-	background-color: #fff;
-	border-color: #bbbfbb;
-}*/
-
-#head {
-	/*border-bottom-color: #666a66;*/
-	/*border-bottom-color: #f0f3f0;*/
-}
-
 #logo a {
 	color: #000;
 }
@@ -41,7 +27,6 @@ code {
 }
 
 #body {
-	/*background-color: #fbfcfb;*/
 	background-color: #f6faf6;
 }
 
@@ -57,15 +42,11 @@ code {
 	color: #390;
 }
 
-#foot {
-	/*border-top-color: #f0f3f0;*/
-}
-
-#meta_navigation .menu-item a {
+#menu .menu-item a {
 	color: #390;
 }
 
-#meta_navigation .nested-menu .menu-item a {
+#menu .nested-menu .menu-item a {
 	color: #000;
 }
 
@@ -77,24 +58,17 @@ code {
 	color: #390;
 }
 
-.albums .album .preview_image img,
+.albums .album .preview-image img {
+	background-color: #ccc;
+	border-color: #ccc;
+}
+
 .images .image img {
 	background-color: #ccc;
 	border-color: #ccc;
 }
 
-#overlay {
-	background-color: #000;
-}
-
-#container {
-	color: #fff;
-}
-
-.pagination .page, .pagination .page {
-	border-color: #ccc;
-}
-
-.controls .control {
+#slideshow img {
+	background-color: #ccc;
 	border-color: #ccc;
 }

@@ -1,5 +1,5 @@
 <? $this->displayView('components/header.php'); ?>
-<? $fields = array('Message'); if ($this->getApplication()->getConfiguration('debugMxode')) $fields = array_merge($fields, array('Details', 'Trace')); ?>
+<? $fields = array('Message'); if ($this->getApplication()->getConfiguration('debugMode')) $fields = array_merge($fields, array('Details', 'Trace')); ?>
 <? foreach ($fields as $n => $field): ?>
 					<div class="<? if ($n + 1 == count($fields)) echo 'last '; echo $n % 2 ? 'odd' : 'even'; ?>">
 <? $getter = 'get' . $field; ?>

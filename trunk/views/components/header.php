@@ -7,7 +7,6 @@
 		<title><? echo $this->localize('notmybiz'); ?></title>
 		<link href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>css/style.css" rel="stylesheet" title="Default" type="text/css"/>
 		<link type="image/x-icon" href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>favicon.ico" rel="shortcut icon"/>
-		<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/mootools.js"></script>
 	</head>
 	<body>
 		<div id="document">
