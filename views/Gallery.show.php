@@ -12,10 +12,11 @@
 
 					</h2>
 <? endif; ?>
-<? if (count($Albums)): ?>
-					<ul class="albums">
+<? $numberAlbums = count($Albums); ?>
+<? if ($numberAlbums > 0): ?>
+					<ul class="albums<? if ($numberAlbums < 3): ?> two-columns<? endif; ?>">
 <? foreach ($Albums as $n => $Album): ?>
-						<li class="<? echo ($n + 1) % 2 ? 'odd' : 'even'; ?><? if (($n + 1) % 3 == 0) echo ' last-in-row'; ?> album">
+						<li class="<? echo ($n + 1) % 2 ? 'odd' : 'even'; ?><? if (($n + 1) % ($numberAlbums < 3 ? 2 : 3) == 0) echo ' last-in-row'; ?> album">
 							<h<? echo $isAlbum ? 3 : 2; ?>>
 								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><? echo $this->localize($Album->getTitle()); ?></a>
 							</h3>
@@ -26,7 +27,7 @@
 <? endif; ?>
 <? if ($PreviewImage = $Album->getPreviewImage()): ?>
 							<div class="preview-image">
-								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($PreviewImage->getFileName()); ?>/?w=280&amp;h=280&amp;m=crop" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
+								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($PreviewImage->getFileName()); ?>/?<? if ($numberAlbums < 3): ?>w=434&amp;h=434<? else: ?>w=280&amp;h=280<? endif; ?>&amp;m=crop" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
 							</div>
 <? endif; ?>
 						</li>

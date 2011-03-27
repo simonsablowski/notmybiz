@@ -146,6 +146,11 @@ table.full-width {
 	width: 279px;
 }
 
+.two-columns .album .preview-image img {
+	height: 433px;
+	width: 433px;
+}
+
 .albums:after {
 	clear: both;
 	content: '.';

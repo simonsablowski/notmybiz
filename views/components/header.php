@@ -8,7 +8,6 @@
 		<meta name="description" content="<? echo (isset($subtitle) ? $this->localize($subtitle) . ' - ' : '') . $this->localize('notmybiz.com presents illustration and art by Simon Sablowski and Filippo Baraccani'); ?>"/>
 		<meta name="keywords" content="<? echo $this->localize('simon sablowski, sablowski, berlin, filippo baraccani, baraccani, bremen, portfolio, illustration, design, life drawing, character design, portrait, caricature, comic'); ?>"/>
 		<meta name="revisit-after" content="1 day"/>
-		<base href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>"/>
 		<link href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>css/style.css" rel="stylesheet" title="Default" type="text/css"/>
 		<link type="image/x-icon" href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>favicon.ico" rel="shortcut icon"/>
 	</head>
