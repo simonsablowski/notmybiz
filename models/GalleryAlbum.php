@@ -71,7 +71,7 @@ class GalleryAlbum extends Gallery {
 			return $this->setPreviewImage(GalleryImage::findFirst(array(
 				'AlbumId' => $this->getId(),
 				'preview' => 'yes'
-			)));
+			), array('rand')));
 		} catch (Error $Error) {
 			foreach ($this->getAlbums() as $Album) {
 				if ($PreviewImage = $Album->getPreviewImage()) {

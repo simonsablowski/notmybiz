@@ -1,9 +1,9 @@
-<? $this->displayView('components/header.php'); ?>
+<? $isAlbum = $Album instanceof GalleryAlbum; $this->displayView('components/header.php', $isAlbum ? array('subtitle' => $Album->getTitle()) : array()); ?>
 					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/jquery-1.3.2.js"></script>
 					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/jquery.history.js"></script>
 					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/jquery.galleriffic.js"></script>
 					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/jquery.opacityrollover.js"></script>
-<? $isAlbum = $Album instanceof GalleryAlbum; if ($isAlbum): ?>
+<? if ($isAlbum): ?>
 					<h2>
 <? foreach ($Album->getAncestors() as $Ancestor): ?>
 						<a class="path-part" href="<? echo $this->getApplication()->getConfiguration('basePath') . $Ancestor->getKey(); ?>"><? echo $this->localize($Ancestor->getTitle()); ?></a>
@@ -26,7 +26,7 @@
 <? endif; ?>
 <? if ($PreviewImage = $Album->getPreviewImage()): ?>
 							<div class="preview-image">
-								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($PreviewImage->getFileName()); ?>/?w=280&h=280&m=crop" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
+								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($PreviewImage->getFileName()); ?>/?w=280&amp;h=280&amp;m=crop" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
 							</div>
 <? endif; ?>
 						</li>
@@ -39,9 +39,7 @@
 						<ul class="images thumbs">
 <? foreach ($Images as $n => $Image): ?>
 							<li class="<? echo ($n + 1) % 2 ? 'odd' : 'even'; ?><? if (($n + 1) % 10 == 0) echo ' last-in-row'; ?> image">
-								<a class="thumb" href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($Image->getFileName()); ?>/?h=500&amp;w=800">
-									<img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo $Image->getFileName(); ?>/?w=75&amp;h=75&amp;m=crop" alt="<? echo $Image->getTitle(); ?>" title="<? echo $Image->getTitle(); ?>"/>
-								</a>
+								<a class="thumb" href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($Image->getFileName()); ?>/?h=500&amp;w=800"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo $Image->getFileName(); ?>/?w=75&amp;h=75&amp;m=crop" alt="<? echo $Image->getTitle(); ?>" title="<? echo $Image->getTitle(); ?>"/></a>
 							</li>
 <? endforeach; ?>
 						</ul>
