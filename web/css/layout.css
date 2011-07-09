@@ -19,17 +19,18 @@ a {
 #logo {
 	font-size: 250%;
 	font-weight: bold;
-	letter-spacing: 0.15em;
 	line-height: 0.45;
-	text-transform: lowercase;
 }
 
 #logo a {
+	background: url('../img/logo.png') top left no-repeat;
+	color: transparent !important;
 	display: block;
 	padding: 0.65em 0 0.75em 0.75em;
 }
 
 #logo em {
+	color: transparent !important;
 	font-weight: bold;
 }
 
@@ -200,8 +201,21 @@ table.full-width {
 
 #slideshow {
 	clear: both;
-	height: 500px;
+	height: 502px;
 	padding: 1.5em 0 2em;
+	position: relative;
+	text-align: center;
+}
+
+#slideshow .current {
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+#slideshow .current a {
+	display: block;
+	height: 502px;
 	text-align: center;
 }
 
