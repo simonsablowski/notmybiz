@@ -1,5 +1,4 @@
 <? $isAlbum = $Album instanceof GalleryAlbum; $this->displayView('components/header.php', $isAlbum ? array('subtitle' => $Album->getTitle()) : array()); ?>
-					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/jquery-1.3.2.js"></script>
 					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/jquery.history.js"></script>
 					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/jquery.galleriffic.js"></script>
 					<script type="text/javascript" src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>js/jquery.opacityrollover.js"></script>
@@ -45,6 +44,7 @@
 <? endforeach; ?>
 						</ul>
 						<a class="next page-link" style="visibility: hidden;" href="#" title="<? echo $this->localize('Next page'); ?>">&rarr;</a>
+						<div id="loading"></div>
 						<div id="slideshow"></div>
 						<script type="text/javascript">
 						jQuery(document).ready(function($) {
