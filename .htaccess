@@ -1,5 +1,0 @@
-RewriteEngine on
-
-RewriteBase /notmybiz/web
-
-RewriteRule .* index.php
