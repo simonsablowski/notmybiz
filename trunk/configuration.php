@@ -4,7 +4,7 @@ $configuration = array();
 
 $configuration['pathApplication'] = dirname(__FILE__) . '/';
 
-$configuration['basePath'] = '/notmybiz/';
+$configuration['basePath'] = '/';
 
 $configuration['includeDirectories'] = array(
 	$configuration['pathApplication'],
@@ -25,5 +25,4 @@ $configuration['Request'] = array(
 	'aliasQueries' => array()
 );
 
-$configuration['debugMode'] = TRUE;
-// $configuration['debugMode'] = FALSE;
+$configuration['debugMode'] = FALSE;
