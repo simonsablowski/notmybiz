@@ -26,7 +26,7 @@
 <? endif; ?>
 <? if ($PreviewImage = $Album->getPreviewImage()): ?>
 							<div class="preview-image">
-								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($PreviewImage->getFileName()); ?>/?<? if ($numberAlbums < 3): ?>w=434&amp;h=434<? else: ?>w=280&amp;h=280<? endif; ?>&amp;m=crop" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
+								<a href="<? echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>Image__show__<? echo urldecode($PreviewImage->getFileName()); ?>__<? if ($numberAlbums < 3): ?>434__434<? else: ?>280__280<? endif; ?>__true__false__70" alt="<? echo $PreviewImage->getTitle(); ?>" title="<? echo $PreviewImage->getTitle(); ?>"/></a>
 							</div>
 <? endif; ?>
 						</li>
@@ -39,7 +39,7 @@
 						<ul class="images thumbs">
 <? foreach ($Images as $n => $Image): ?>
 							<li class="<? echo ($n + 1) % 2 ? 'odd' : 'even'; ?><? if (($n + 1) % 10 == 0) echo ' last-in-row'; ?> image">
-								<a class="thumb" href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo urldecode($Image->getFileName()); ?>/?h=500&amp;w=800"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>imgproc/<? echo $Image->getFileName(); ?>/?w=75&amp;h=75&amp;m=crop" alt="<? echo $Image->getTitle(); ?>" title="<? echo $Image->getTitle(); ?>"/></a>
+								<a class="thumb" href="<? echo $this->getApplication()->getConfiguration('basePath'); ?>Image__show__<? echo urldecode($Image->getFileName()); ?>__500__500__false__false__80"><img src="<? echo $this->getApplication()->getConfiguration('basePath'); ?>Image__show__<? echo urldecode($Image->getFileName()); ?>__75__75__true__true__60" alt="<? echo $Image->getTitle(); ?>" title="<? echo $Image->getTitle(); ?>"/></a>
 							</li>
 <? endforeach; ?>
 						</ul>
