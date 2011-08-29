@@ -12,13 +12,13 @@ class Image extends Application {
 	protected $extension;
 	protected $cachePath;
 	
-	public function __construct($source, $width, $height, $crop, $grey, $quality) {
+	public function __construct($source, $width = 0, $height = 0, $crop = FALSE, $grey = FALSE, $quality = 100) {
 		$this->setSource($source);
-		$this->setWidth(round($width));
-		$this->setHeight(round($height));
-		$this->setCrop($crop == 'true');
-		$this->setGrey($grey == 'true');
-		$this->setQuality(round($quality));
+		$this->setWidth((int)$width);
+		$this->setHeight((int)$height);
+		$this->setCrop((bool)$crop);
+		$this->setGrey((bool)$grey);
+		$this->setQuality((int)$quality);
 	}
 	
 	protected function checkConfiguration() {
