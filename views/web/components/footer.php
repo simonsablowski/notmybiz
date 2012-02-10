@@ -7,10 +7,10 @@
 				</p>
 				<ul id="menu">
 					<li class="menu-item">
-						<a href="http://fbrccn.com" title="fbrccn.com">fbrccn.com</a>
+						<a href="http://www.fbrccn.com" title="fbrccn.com">fbrccn.com</a>
 					</li>
 					<li class="menu-item">
-						<a href="http://simsab.de/en" title="simsab.de">simsab.de</a>
+						<a href="http://www.simsab.net" title="simsab.net">simsab.net</a>
 					</li>
 				</ul>
 			</div>
