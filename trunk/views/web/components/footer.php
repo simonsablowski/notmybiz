@@ -2,16 +2,15 @@
 			</div>
 			<div id="foot">
 				<p id="copyright">
-					<? echo $this->localize('&copy; 2004-2011 <a href="%s">notmybiz</a>', $this->getConfiguration('basePath')); ?>
+					<? echo $this->localize('&copy; 2004-%d <a href="%s">notmybiz</a>', array(date('Y'), $this->getConfiguration('basePath'))); ?>
 
 				</p>
 				<ul id="menu">
+<? foreach ($this->getConfiguration('partnerSites') as $title => $url): ?>
 					<li class="menu-item">
-						<a href="http://www.fbrccn.com" title="fbrccn.com">fbrccn.com</a>
+						<a href="<? echo $url; ?>" title="<? echo $title; ?>"><? echo $title; ?></a>
 					</li>
-					<li class="menu-item">
-						<a href="http://www.simsab.net" title="simsab.net">simsab.net</a>
-					</li>
+<? endforeach; ?>
 				</ul>
 			</div>
 		</div>
