@@ -3,12 +3,10 @@ RewriteEngine on
 RewriteCond %{ENV:REDIRECT_STATUS} !^$
 RewriteRule ^ - [L]
 
-RewriteRule ^$ index.php [L,QSA]
-
 RewriteCond $1 !^robots\.txt
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !=/favicon.ico
 
-RewriteRule ^([\w/-]+)$ index.php?query=Gallery__show__$1 [L]
-RewriteRule ^(Image__show__(.+))$ index.php?query=$1 [L]
+RewriteRule ^([\w/-]+)$ index.php?query=Gallery:show:$1 [L]
+RewriteRule ^(Image:show:(.+))$ index.php?query=$1 [L]
