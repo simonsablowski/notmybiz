@@ -143,7 +143,7 @@ a {
 
 .images .image {
 	float: left;
-	margin-right: 0.5em;
+	margin-right: 9px;
 }
 
 .images .last-in-row {
