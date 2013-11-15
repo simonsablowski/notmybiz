@@ -4,12 +4,12 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 }
 
 body {
-	font-family: 'trebuchet ms', arial, helvetica, clean, sans-serif;
-	font-size: 13px;
+	font-family: arial, helvetica, clean, sans-serif;
+	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
-	line-height: 1.4;
+	line-height: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
