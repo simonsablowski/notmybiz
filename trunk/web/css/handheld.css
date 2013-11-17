@@ -28,6 +28,10 @@
 	margin-right: 9px;
 }
 
+#slideshow .current, #slideshow .controls .previous, #slideshow .controls .next {
+        margin-top: 0;
+}
+
 #copyright {
 	padding: 10px 20px;
 }
