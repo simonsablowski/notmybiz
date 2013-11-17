@@ -1,17 +1,19 @@
-<? $this->displayView('components/header.php'); ?>
-<? $fields = array('Message'); if ($this->getApplication()->getConfiguration('debugMode')) $fields = array_merge($fields, array('Details', 'Trace')); ?>
-<? foreach ($fields as $n => $field): ?>
-					<div class="<? if ($n + 1 == count($fields)) echo 'last '; echo $n % 2 ? 'odd' : 'even'; ?>">
-<? $getter = 'get' . $field; ?>
-<? if ($field != 'Details' && $field != 'Trace'): ?>
-						<? echo $this->localize($Error->$getter()); ?>
-<? else: ?>
-						<div class="highlight">
-							<? var_dump($Error->$getter()); ?>
-						</div>
-<? endif; ?>
-
-						<p>&nbsp;</p>
+<?php $this->displayView('components/header.php'); ?>
+			<div id="body">
+<?php $fields = array('Message'); if ($this->getApplication()->getConfiguration('debugMode')) $fields = array_merge($fields, array('Details', 'Trace')); ?>
+<?php foreach ($fields as $n => $field): ?>
+				<div class="<?php if ($n + 1 == count($fields)) echo 'last '; echo $n % 2 ? 'odd' : 'even'; ?>">
+<?php $getter = 'get' . $field; ?>
+<?php if ($field != 'Details' && $field != 'Trace'): ?>
+					<?php echo $this->localize($Error->$getter()); ?>
+<?php else: ?>
+					<div class="highlight">
+						<?php var_dump($Error->$getter()); ?>
 					</div>
-<? endforeach; ?>
-<? $this->displayView('components/footer.php'); ?>
+<?php endif; ?>
+
+					<p>&nbsp;</p>
+				</div>
+<?php endforeach; ?>
+			</div>
+<?php $this->displayView('components/footer.php'); ?>

@@ -3,7 +3,7 @@ html, body {
 }
 
 html {
-	background-color: #dfffdc;
+	background-color: rgb(104, 235, 104);
 }
 
 #document {
@@ -21,13 +21,13 @@ a {
 	text-decoration: none;
 }
 
-#logo, #content, #copyright {
+#logo, #body, #copyright {
 	margin: 0 auto;
 	width: 900px;
 }
 
 #head {
-	background-color: #fff;
+	background-color: rgb(255, 255, 255);
 }
 
 #logo {
@@ -35,137 +35,101 @@ a {
 }
 
 #logo a {
-	background-image: url('../img/logo.png');
+	background-image: url(../img/logo.png);
 	background-position: center left;
 	background-repeat: no-repeat;
-	color: #000;
+	color: transparent;
 	display: block;
 	font-size: 265%;
 	font-weight: bold;
 	line-height: 1;
 	padding: 10px 0;
-	text-indent: -999px;
 }
 
-#logo em {
-	color: #6c0;
-	font-weight: bold;
-}
-
-#content {
+#body {
 	padding: 30px 30px 80px;
 }
 
-#content a {
-	color: #390;
+#body a {
+	color: rgb(51, 153, 0);
 }
 
-#content h2 {
-	color: #360;
+#body h2 {
+	color: rgb(51, 102, 0);
 	font-size: 200%;
 	font-weight: bold;
 	margin: 0 0 20px;
 }
 
-#content h2 .path-part {
-	margin-right: 1em;
+#body h2 .path-part {
+	margin-right: 0.5em;
 }
 
-#content h2 .last {
+#body h2 .last {
 	margin-right: 0;
 }
 
-#content h2 .path-part:after {
+#body h2 .path-part:after {
 	content: '/';
-	margin-left: 1em;
+	margin-left: 0.5em;
 }
 
-#content h2 .last:after {
+#body h2 .last:after {
 	content: none;
 	margin-left: 0;
 }
 
-#content h3 {
-	background-color: #e9ffe6;
-	color: #390;
+#body h3 {
+	background-color: rgb(233, 255, 230);
+	color: rgb(51, 153, 0);
 	line-height: 1;
 	opacity: 0.75;
 	position: absolute;
 	width: 280px;
 }
 
-#content h3 a {
+#body h3 a {
 	display: block;
 	font-size: 150%;
 	padding: 10px;
 }
 
-.albums .album {
+#gallery .albums .album {
 	float: left;
 	margin: 0 20px 20px 0;
 	position: relative;
 }
 
-.albums .last-in-row {
+#gallery .albums .last-in-row {
 	margin-right: 0;
 }
 
-.albums .album .preview-image img {
-	background-color: #ccc;
+#gallery .albums .album .preview-image img {
+	background-color: rgb(204, 204, 204);
 	height: 280px;
 	width: 280px;
 }
 
-#gallery {
-	clear: both;
-}
-
-#gallery .page-link {
-	display: block;
-	font-size: 150%;
+#gallery .images .image {
 	float: left;
-	height: 77px;
-	line-height: 77px;
-	width: 34px;
+	margin: 0 9px 9px 0;
 }
 
-#gallery .next {
-	text-align: right;
-}
-
-#gallery .previous {
-	text-align: left;
-}
-
-.images {
-	float: left;
-}
-
-.images .image {
-	float: left;
-	margin-right: 9px;
-}
-
-.images .last-in-row {
+#gallery .images .last-in-row {
 	margin-right: 0;
 }
 
-.images .image a {
+#gallery .images .image a {
 	display: block;
-	float: left;
-	height: 77px;
 }
 
-.images .image img {
-	height: 75px;
-	width: 75px;
+#gallery .images .image img {
+	background-color: rgb(204, 204, 204);
+	height: 81px;
+	width: 81px;
 }
 
-.images .image img {
-	background-color: #ccc;
-}
-
-.albums:after, .images:after {
+#gallery .albums:after, #gallery .images:after {
 	clear: both;
 	content: '.';
 	display: block;
@@ -174,31 +138,80 @@ a {
 }
 
 #slideshow {
-	clear: both;
-	height: 500px;
-	padding: 20px 0 0;
-	position: relative;
-	text-align: center;
-}
-
-#slideshow img {
-	background-color: #ccc;
-}
-
-#slideshow .current {
-	left: 0;
+	background: rgba(0, 0, 0, 0.75);
+	display: none;
+	height: 100%;
 	position: absolute;
+	top: 0;
 	width: 100%;
 }
 
-#slideshow .current a {
-	display: block;
-	height: 502px;
+#slideshow .current {
 	text-align: center;
+	margin: 20px 0;
+}
+
+#slideshow .controls {
+	position: relative;
+}
+
+#slideshow .controls .control {
+	position: absolute;
+}
+
+#slideshow .controls .previous, #slideshow .controls .next {
+	height: 500px;
+	margin: 20px 0;
+	top: 0;
+	width: 50%;
+}
+
+#slideshow .controls .previous {
+	left: 0;
+	text-align: left;
+}
+
+#slideshow .controls .next {
+	right: 0;
+	text-align: right;
+}
+
+#slideshow .controls .close {
+	height: 20px;
+	right: 20px;
+	text-align: right;
+	top: 20px;
+	width: 20px;
+}
+
+#slideshow .controls .control a {
+	color: transparent;
+	display: block;
+}
+
+#slideshow .controls .previous a {
+	background-image: url(../img/previous.png);
+	background-position: 25% center;
+	background-repeat: no-repeat;
+	height: 500px;
+}
+
+#slideshow .controls .next a {
+	background-image: url(../img/next.png);
+	background-position: 75% center;
+	background-repeat: no-repeat;
+	height: 500px;
+}
+
+#slideshow .controls .close a {
+	background-image: url(../img/close.png);
+	background-position: 50% center;
+	background-repeat: no-repeat;
+	height: 20px;
 }
 
 #foot {
-	background-color: #fff;
+	background-color: rgb(255, 255, 255);
 	clear: both;
 	height: 34px;
 	margin: -34px auto 0;
@@ -206,11 +219,11 @@ a {
 }
 
 #copyright {
-	color: #000;
+	color: rgb(0, 0, 0);
 	float: none;
 	padding: 10px 30px;
 }
 
 #copyright a {
-	color: #390;
+	color: rgb(51, 102, 0);
 }
