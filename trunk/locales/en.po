@@ -1,0 +1,23 @@
+msgid "document-language"
+msgstr "en"
+
+msgid "document-title"
+msgstr "notmybiz"
+
+msgid "canonical-url"
+msgstr "http://www.notmybiz.com"
+
+msgid "meta-description"
+msgstr "notmybiz.com presents illustration and art by Simon Sablowski"
+
+msgid "meta-keywords"
+msgstr "simon sablowski, simsab, sablowski, berlin, portfolio, illustration, life drawing, character design, portrait, caricature, comic"
+
+msgid "slideshow-previous"
+msgstr "Previous"
+
+msgid "slideshow-next"
+msgstr "Next"
+
+msgid "slideshow-close"
+msgstr "Close"

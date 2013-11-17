@@ -5,10 +5,11 @@ $configuration = array();
 $configuration['pathApplication'] = dirname(__FILE__) . '/';
 
 $configuration['basePath'] = '/';
+$configuration['mediaPath'] = '/';
 
 $configuration['includeDirectories'] = array(
 	$configuration['pathApplication'],
-	$configuration['pathApplication'] . '../nacho/'
+	$configuration['pathApplication'] . '../../nacho/'
 );
 
 $configuration['Database'] = array(
@@ -17,6 +18,15 @@ $configuration['Database'] = array(
 	'name' => 'notmybiz',
 	'user' => 'root',
 	'password' => ''
+);
+
+$configuration['Localization'] = array(
+	'default' => 'en',
+	'en' => array(
+		'language' => 'en',
+		'locale' => 'en_GB',
+		'name' => 'English'
+	)
 );
 
 $configuration['Request'] = array(
