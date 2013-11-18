@@ -38,8 +38,8 @@ $configuration['Request'] = array(
 $configuration['Image'] = array(
 	'parameterSets' => array(
 		array(
-			'width' => 75,
-			'height' => 75,
+			'width' => 81,
+			'height' => 81,
 			'crop' => true,
 			'grey' => true,
 			'quality' => 80
@@ -52,14 +52,7 @@ $configuration['Image'] = array(
 			'quality' => 80
 		),
 		array(
-			'width' => 434,
-			'height' => 434,
-			'crop' => true,
-			'grey' => false,
-			'quality' => 80
-		),
-		array(
-			'width' => 896,
+			'width' => 900,
 			'height' => 500,
 			'crop' => false,
 			'grey' => false,

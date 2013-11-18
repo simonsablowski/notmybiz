@@ -21,14 +21,14 @@ class GalleryAlbum extends Gallery {
 		'title'
 	);
 	
-	protected $Parent = NULL;
-	protected $PreviewImage = NULL;
+	protected $Parent = null;
+	protected $PreviewImage = null;
 	
 	protected function loadParent() {
 		try {
 			$this->setParent(self::find($this->getParentId()));
 		} catch (Error $Error) {
-			$this->setParent(NULL);
+			$this->setParent(null);
 		}
 	}
 	
@@ -60,10 +60,10 @@ class GalleryAlbum extends Gallery {
 		));
 	}
 	
-	public function getImages($limit = NULL) {
+	public function getImages($limit = null) {
 		return GalleryImage::findAll(array(
 			'AlbumId' => $this->getId()
-		), NULL, $limit);
+		), null, $limit);
 	}
 	
 	protected function loadPreviewImage() {
