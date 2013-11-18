@@ -24,8 +24,18 @@ function Gallery() {
 	self.currentSlide = null;
 	
 	self.construct = function() {
+		self.startSlideshowFromHash();
 		self.bindEvents();
-	}
+	};
+	
+	self.startSlideshowFromHash = function() {
+		if (document.location.hash) {
+			var slide = $('#gallery .thumbnails .thumbnail a')[document.location.hash.slice(1) - 1];
+			if (slide) {
+				self.startSlideshow(slide);
+			}
+		}
+	};
 	
 	self.bindEvents = function() {
 		var startSlideshow = function(event) {
@@ -78,6 +88,15 @@ function Gallery() {
 	
 	self.changeSlide = function() {
 		$('#slideshow .current').html($('<img>').attr('src', self.currentSlide));
+		self.changeHash($('a[href="' + self.currentSlide + '"]').parent('.thumbnail').index() + 1);
+	};
+	
+	self.changeHash = function(hash) {
+		if (hash == null) {
+			history.pushState('', document.title, window.location.pathname);
+		} else {
+			document.location.hash = hash;
+		}
 	};
 	
 	self.showPreviousSlide = function() {
@@ -102,7 +121,7 @@ function Gallery() {
 	
 	self.endSlideshow = function() {
 		$('#slideshow').hide();
-		self.changeSlide();
+		self.changeHash(null);
 	};
 	
 	self.construct();
