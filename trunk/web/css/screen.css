@@ -3,7 +3,7 @@ html, body {
 }
 
 html {
-	background-color: rgb(104, 235, 104);
+	background-color: rgb(101, 226, 101);
 }
 
 #document {
@@ -51,11 +51,11 @@ a {
 }
 
 #body a {
-	color: rgb(51, 153, 0);
+	color: rgb(37, 147, 37);
 }
 
 #body h2 {
-	color: rgb(51, 102, 0);
+	color: rgb(0, 127, 0);
 	font-size: 200%;
 	font-weight: bold;
 	margin: 0 0 20px;
@@ -80,8 +80,8 @@ a {
 }
 
 #body h3 {
-	background-color: rgb(233, 255, 230);
-	color: rgb(51, 153, 0);
+	background-color: rgb(227, 255, 227);
+	color: rgb(0, 127, 0);
 	line-height: 1;
 	opacity: 0.75;
 	position: absolute;
@@ -105,7 +105,7 @@ a {
 }
 
 #gallery .albums .album .preview-image img {
-	background-color: rgb(204, 204, 204);
+	background-color: rgb(196, 196, 196);
 	height: 280px;
 	width: 280px;
 }
@@ -124,7 +124,7 @@ a {
 }
 
 #gallery .images .image img {
-	background-color: rgb(204, 204, 204);
+	background-color: rgb(196, 196, 196);
 	height: 81px;
 	width: 81px;
 }
@@ -138,7 +138,7 @@ a {
 }
 
 #slideshow {
-	background: rgba(0, 0, 0, 0.75);
+	background-color: rgba(0, 0, 0, 0.75);
 	display: none;
 	height: 100%;
 	position: absolute;
@@ -146,9 +146,12 @@ a {
 	width: 100%;
 }
 
+#slideshow .current, #slideshow .controls .previous, #slideshow .controls .next {
+	margin: 57px 0 0;
+}
+
 #slideshow .current {
 	text-align: center;
-	margin: 20px 0;
 }
 
 #slideshow .controls {
@@ -161,27 +164,23 @@ a {
 
 #slideshow .controls .previous, #slideshow .controls .next {
 	height: 500px;
-	margin: 20px 0;
 	top: 0;
 	width: 50%;
 }
 
 #slideshow .controls .previous {
 	left: 0;
-	text-align: left;
 }
 
 #slideshow .controls .next {
 	right: 0;
-	text-align: right;
 }
 
 #slideshow .controls .close {
-	height: 20px;
-	right: 20px;
-	text-align: right;
-	top: 20px;
-	width: 20px;
+	height: 40px;
+	right: 0;
+	top: 0;
+	width: 40px;
 }
 
 #slideshow .controls .control a {
@@ -189,25 +188,29 @@ a {
 	display: block;
 }
 
+#slideshow .controls .previous a, #slideshow .controls .next a {
+	height: 500px;
+	width: auto;
+}
+
 #slideshow .controls .previous a {
 	background-image: url(../img/previous.png);
 	background-position: 25% center;
 	background-repeat: no-repeat;
-	height: 500px;
 }
 
 #slideshow .controls .next a {
 	background-image: url(../img/next.png);
 	background-position: 75% center;
 	background-repeat: no-repeat;
-	height: 500px;
 }
 
 #slideshow .controls .close a {
 	background-image: url(../img/close.png);
 	background-position: 50% center;
 	background-repeat: no-repeat;
-	height: 20px;
+	height: 40px;
+	width: 40px;
 }
 
 #foot {
@@ -225,5 +228,5 @@ a {
 }
 
 #copyright a {
-	color: rgb(51, 102, 0);
+	color: rgb(0, 127, 0);
 }
