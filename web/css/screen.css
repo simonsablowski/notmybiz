@@ -1,20 +1,11 @@
-html, body {
-	height: 100%;
-}
-
 html {
 	background-color: rgb(101, 226, 101);
-}
-
-#document {
-	margin: 0;
-	position: relative;
-	width: auto;
-}
-
-body > #document {
-	height: auto;
 	min-height: 100%;
+	position: relative;
+}
+
+body {
+	margin: 0 0 34px;
 }
 
 a {
@@ -47,7 +38,7 @@ a {
 }
 
 #body {
-	padding: 30px 30px 80px;
+	padding: 30px;
 }
 
 #body a {
@@ -214,15 +205,14 @@ a {
 
 #foot {
 	background-color: rgb(255, 255, 255);
-	clear: both;
+	bottom: 0;
 	height: 34px;
-	margin: -34px auto 0;
-	position: relative;
+	position: absolute;
+	width: 100%;
 }
 
 #copyright {
 	color: rgb(0, 0, 0);
-	float: none;
 	padding: 10px 30px;
 }
 
