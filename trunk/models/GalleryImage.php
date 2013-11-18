@@ -21,13 +21,13 @@ class GalleryImage extends Gallery {
 		'fileName'
 	);
 	
-	protected $Album = NULL;
+	protected $Album = null;
 	
 	protected function loadAlbum() {
 		try {
 			$this->setAlbum(GalleryAlbum::find($this->getAlbumId()));
 		} catch (Error $Error) {
-			$this->setAlbum(NULL);
+			$this->setAlbum(null);
 		}
 	}
 }

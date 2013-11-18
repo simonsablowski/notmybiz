@@ -7,7 +7,7 @@ class GalleryController extends Controller {
 			$Albums = $Album->getAlbums();
 			$Images = $Album->getImages();
 		} else {
-			$Album = NULL;
+			$Album = null;
 			$Albums = Gallery::getIndexAlbums();
 			$Images = Gallery::getIndexImages();
 		}

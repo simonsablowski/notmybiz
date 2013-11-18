@@ -13,9 +13,9 @@ abstract class Gallery extends Model {
 		));
 	}
 	
-	public static function getIndexImages($imagesPerPage = NULL) {
+	public static function getIndexImages($imagesPerPage = null) {
 		return GalleryImage::findAll(array(
 			'AlbumId' => ''
-		), NULL, $imagesPerPage);
+		), null, $imagesPerPage);
 	}
 }
