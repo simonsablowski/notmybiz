@@ -12,7 +12,7 @@ class Image extends Application {
 	protected $extension;
 	protected $cachePath;
 	
-	public function __construct($source, $width = 0, $height = 0, $crop = FALSE, $grey = FALSE, $quality = 100) {
+	public function __construct($source, $width = 0, $height = 0, $crop = false, $grey = false, $quality = 100) {
 		$this->setSource($source);
 		$this->setWidth((int)$width);
 		$this->setHeight((int)$height);

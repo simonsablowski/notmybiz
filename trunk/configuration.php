@@ -40,29 +40,29 @@ $configuration['Image'] = array(
 		array(
 			'width' => 75,
 			'height' => 75,
-			'crop' => TRUE,
-			'grey' => TRUE,
+			'crop' => true,
+			'grey' => true,
 			'quality' => 80
 		),
 		array(
 			'width' => 280,
 			'height' => 280,
-			'crop' => TRUE,
-			'grey' => FALSE,
+			'crop' => true,
+			'grey' => false,
 			'quality' => 80
 		),
 		array(
 			'width' => 434,
 			'height' => 434,
-			'crop' => TRUE,
-			'grey' => FALSE,
+			'crop' => true,
+			'grey' => false,
 			'quality' => 80
 		),
 		array(
 			'width' => 896,
 			'height' => 500,
-			'crop' => FALSE,
-			'grey' => FALSE,
+			'crop' => false,
+			'grey' => false,
 			'quality' => 90
 		)
 	),
@@ -77,4 +77,4 @@ $configuration['Image'] = array(
 
 $configuration['trackingCode'] = "\t\t<script type=\"text/javascript\">\n\t\t<!--\n\t\tvar gaJsHost = 'https:' == document.location.protocol ? 'https://ssl.' : 'http://www.';\n\t\tdocument.write(unescape('%3Cscript src=\"' + gaJsHost + 'google-analytics.com/ga.js\" type=\"text/javascript\"%3E%3C/script%3E'));\t\t//-->\n\t\t</script>\n\t\t<script type=\"text/javascript\">\n\t\t<!--\n\t\ttry {\n\t\t\tvar pageTracker = _gat._getTracker('UA-2644687-1');\n\t\t\tpageTracker._initData();\n\t\t\tpageTracker._trackPageview();\n\t\t} catch (error) {\n\t\t\t\n\t\t}\n\t\t//-->\n\t\t</script>";
 
-$configuration['debugMode'] = FALSE;
+$configuration['debugMode'] = false;
