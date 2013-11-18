@@ -80,10 +80,9 @@ a {
 }
 
 #body h3 {
-	background-color: rgb(227, 255, 227);
+	background-color: rgba(227, 255, 227, 0.75);
 	color: rgb(0, 127, 0);
 	line-height: 1;
-	opacity: 0.75;
 	position: absolute;
 	width: 280px;
 }
