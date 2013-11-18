@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 		<link href="<?php echo $this->localize('canonical-url'); ?>" rel="canonical"/>
 		<link href="<?php echo $this->getApplication()->getConfiguration('basePath'); ?>css/notmybiz.css" rel="stylesheet" type="text/css"/>
-		<link href="<?php echo $this->getApplication()->getConfiguration('basePath'); ?>notmybiz.ico" rel="shortcut icon" type="image/x-icon"/>
+		<link href="<?php echo $this->getApplication()->getConfiguration('basePath'); ?>img/notmybiz.ico" rel="shortcut icon" type="image/x-icon"/>
 		<script src="<?php echo $this->getApplication()->getConfiguration('basePath'); ?>js/notmybiz.js" type="text/javascript"></script>
 	</head>
 	<body>
