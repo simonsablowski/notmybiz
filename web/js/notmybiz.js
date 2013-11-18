@@ -21,7 +21,10 @@ function loadLibrary(url, callback) {
 
 function Gallery() {
 	var self = this;
-	self.currentSlide = null;
+	self.currentSlide = {
+		source: null,
+		caption: null
+	};
 	
 	self.construct = function() {
 		self.startSlideshowFromHash();
@@ -81,14 +84,16 @@ function Gallery() {
 	};
 	
 	self.startSlideshow = function(firstSlide) {
-		self.currentSlide = $(firstSlide).attr('href');
-		self.changeSlide();
+		self.changeSlide(firstSlide);
 		$('#slideshow').show();
 	};
 	
-	self.changeSlide = function() {
-		$('#slideshow .current').html($('<img>').attr('src', self.currentSlide));
-		self.changeHash($('a[href="' + self.currentSlide + '"]').parent('.thumbnail').index() + 1);
+	self.changeSlide = function(slide) {
+		self.currentSlide.source = $(slide).attr('href');
+		self.currentSlide.caption = $(slide).attr('title');
+		$('#slideshow .current .image').html($('<img>').attr('src', self.currentSlide.source));
+		$('#slideshow .current .caption').html(self.currentSlide.caption);
+		self.changeHash($('a[href="' + self.currentSlide.source + '"]').parent('.thumbnail').index() + 1);
 	};
 	
 	self.changeHash = function(hash) {
@@ -100,23 +105,21 @@ function Gallery() {
 	};
 	
 	self.showPreviousSlide = function() {
-		var currentSlide = $('#gallery .thumbnails .thumbnail a[href="' + self.currentSlide + '"]');
+		var currentSlide = $('#gallery .thumbnails .thumbnail a[href="' + self.currentSlide.source + '"]');
 		var previousSlide = currentSlide.parent('.thumbnail').prev().children('a').first();
 		if ($(previousSlide).length == 0) {
 			previousSlide = currentSlide.parent('.thumbnail').siblings().last().children('a').first();
 		}
-		self.currentSlide = $(previousSlide).attr('href');
-		self.changeSlide();
+		self.changeSlide(previousSlide);
 	};
 	
 	self.showNextSlide = function() {
-		var currentSlide = $('#gallery .thumbnails .thumbnail a[href="' + self.currentSlide + '"]');
+		var currentSlide = $('#gallery .thumbnails .thumbnail a[href="' + self.currentSlide.source + '"]');
 		var nextSlide = currentSlide.parent('.thumbnail').next().children('a').first();
 		if ($(nextSlide).length == 0) {
 			nextSlide = currentSlide.parent('.thumbnail').siblings().first().children('a').first();
 		}
-		self.currentSlide = $(nextSlide).attr('href');
-		self.changeSlide();
+		self.changeSlide(nextSlide);
 	};
 	
 	self.endSlideshow = function() {

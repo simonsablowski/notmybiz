@@ -14,7 +14,10 @@
 						<a href="#" title="<?php echo $this->localize('slideshow-close'); ?>"><?php echo $this->localize('slideshow-close'); ?></a>
 					</li>
 				</ul>
-				<div class="current"></div>
+				<div class="current">
+					<div class="image"></div>
+					<p class="caption"></p>
+				</div>
 			</div>
 			<div id="body">
 <?php if ($isAlbum): ?>
@@ -50,7 +53,7 @@
 					<ul class="images thumbnails">
 <?php foreach ($Images as $n => $Image): ?>
 						<li class="<?php echo ($n + 1) % 2 ? 'odd' : 'even'; ?><?php if (($n + 1) % 10 == 0) echo ' last-in-row'; ?> image thumbnail">
-							<a href="<?php echo sprintf($imagePathPatterns['slide'], urldecode($Image->getFileName())); ?>"><img src="<?php echo sprintf($imagePathPatterns['thumbnail'], urldecode($Image->getFileName())); ?>" alt="<?php echo $Image->getTitle(); ?>" title="<?php echo $Image->getTitle(); ?>"/></a>
+							<a href="<?php echo sprintf($imagePathPatterns['slide'], urldecode($Image->getFileName())); ?>" title="<?php echo $Image->getTitle(); ?>"><img src="<?php echo sprintf($imagePathPatterns['thumbnail'], urldecode($Image->getFileName())); ?>" alt="<?php echo $Image->getTitle(); ?>" title="<?php echo $Image->getTitle(); ?>"/></a>
 						</li>
 <?php endforeach; ?>
 					</ul>

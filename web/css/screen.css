@@ -136,12 +136,18 @@ a {
 	width: 100%;
 }
 
-#slideshow .current, #slideshow .controls .previous, #slideshow .controls .next {
+#slideshow .current .image, #slideshow .controls .previous, #slideshow .controls .next {
+	height: 500px;
 	margin: 57px 0 0;
 }
 
-#slideshow .current {
+#slideshow .current .image, #slideshow .current .caption {
 	text-align: center;
+}
+
+#slideshow .current .caption {
+	color: rgb(204, 204, 204);
+	padding: 20px 0 0;
 }
 
 #slideshow .controls {
@@ -153,7 +159,6 @@ a {
 }
 
 #slideshow .controls .previous, #slideshow .controls .next {
-	height: 500px;
 	top: 0;
 	width: 50%;
 }
