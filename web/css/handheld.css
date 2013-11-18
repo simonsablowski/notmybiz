@@ -29,7 +29,17 @@
 }
 
 #slideshow .current, #slideshow .controls .previous, #slideshow .controls .next {
-        margin-top: 0;
+	margin-top: 0;
+}
+
+#slideshow .controls .close {
+	height: 60px;
+	width: 60px;
+}
+
+#slideshow .controls .close a {
+	height: 60px;
+	width: 60px;
 }
 
 #copyright {
