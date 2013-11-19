@@ -96,10 +96,12 @@ class Image extends Application {
 		if (!$this->getWidth() || !$this->getHeight() || $this->getCrop()) {
 			$identify = sprintf('identify -format "%%w %%h" "%s"', $this->getSource());
 			exec($identify, $output);
-			$params = explode(' ', $output[0]);
 			
-			$width = $params[0];
-			$height = $params[1];
+			if (!isset($output[0])) {
+				throw new FatalError('No output from command identify', $this->getExtension());
+			}
+			
+			list($width, $height) = explode(' ', $output[0]);
 			$wperh = $width / $height;
 			$hperw = $height / $width;
 			$calcw = $this->getHeight() * $wperh;

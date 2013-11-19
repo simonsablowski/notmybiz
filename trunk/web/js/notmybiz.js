@@ -91,7 +91,8 @@ function Gallery() {
 	self.changeSlide = function(slide) {
 		self.currentSlide.source = $(slide).attr('href');
 		self.currentSlide.caption = $(slide).attr('title');
-		$('#slideshow .current .image').html($('<img>').attr('src', self.currentSlide.source));
+		var image = $('<img>').attr('src', self.currentSlide.source).attr('title', self.currentSlide.caption).attr('alt', self.currentSlide.caption);
+		$('#slideshow .current .image').html(image);
 		$('#slideshow .current .caption').html(self.currentSlide.caption);
 		self.changeHash($('a[href="' + self.currentSlide.source + '"]').parent('.thumbnail').index() + 1);
 	};
