@@ -28,7 +28,7 @@
 	margin-right: 9px;
 }
 
-#slideshow .current, #slideshow .controls .previous, #slideshow .controls .next {
+#slideshow .current .image, #slideshow .controls .previous, #slideshow .controls .next {
 	margin-top: 0;
 }
 

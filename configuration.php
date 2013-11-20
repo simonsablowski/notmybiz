@@ -42,7 +42,7 @@ $configuration['Image'] = array(
 			'height' => 81,
 			'crop' => true,
 			'grey' => true,
-			'quality' => 80
+			'quality' => 70
 		),
 		array(
 			'width' => 280,
