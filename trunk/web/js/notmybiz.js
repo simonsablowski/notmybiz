@@ -41,44 +41,36 @@ function Gallery() {
 	};
 	
 	self.bindEvents = function() {
-		var startSlideshow = function(event) {
+		$('#gallery .thumbnails .thumbnail a').click(function(event) {
 			self.startSlideshow(this);
 			event.preventDefault();
-		};
-		
-		var showPreviousSlide = function(event) {
+		});
+		$('#slideshow .previous a').click(function(event) {
 			self.showPreviousSlide();
 			event.preventDefault();
-		};
-		
-		var showNextSlide = function(event) {
+		});
+		$('#slideshow .next a').click(function(event) {
 			self.showNextSlide();
 			event.preventDefault();
-		}
-		
-		var endSlideshow = function(event) {
+		});
+		$('#slideshow .close a').click(function(event) {
 			self.endSlideshow();
 			event.preventDefault();
-		};
-		
-		$('#gallery .thumbnails .thumbnail a').click(startSlideshow);
-		$('#slideshow .previous a').click(showPreviousSlide);
-		$('#slideshow .next a').click(showNextSlide);
-		$('#slideshow .close a').click(endSlideshow);
+		});
 		
 		$(document).keydown(function(event) {
 			switch (event.which) {
 				case 13:
-					startSlideshow(event);
+					self.startSlideshow(null);
 					break;
 				case 37:
-					showPreviousSlide(event);
+					self.showPreviousSlide();
 					break;
 				case 39:
-					showNextSlide(event);
+					self.showNextSlide();
 					break;
 				case 27:
-					endSlideshow(event);
+					self.endSlideshow();
 					break;
 				default:
 					return;
@@ -92,6 +84,9 @@ function Gallery() {
 	};
 	
 	self.changeSlide = function(slide) {
+		if (slide == null) {
+			slide = $('#gallery .thumbnails .thumbnail a').first();
+		}		
 		self.currentSlide.source = $(slide).attr('href');
 		self.currentSlide.caption = $(slide).attr('title');
 		var image = $('<img>').attr('src', self.currentSlide.source).attr('title', self.currentSlide.caption).attr('alt', self.currentSlide.caption);
