@@ -68,6 +68,9 @@ function Gallery() {
 		
 		$(document).keydown(function(event) {
 			switch (event.which) {
+				case 13:
+					startSlideshow(event);
+					break;
 				case 37:
 					showPreviousSlide(event);
 					break;
