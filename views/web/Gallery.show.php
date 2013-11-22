@@ -19,7 +19,7 @@
 					<p class="caption"></p>
 				</div>
 			</div>
-			<div id="body">
+			<article id="body">
 <?php if ($isAlbum): ?>
 				<h2>
 					<?php foreach ($Album->getAncestors() as $Ancestor): ?><a class="path-part" href="<?php echo $this->getApplication()->getConfiguration('basePath') . $Ancestor->getKey(); ?>"><?php echo $this->localize($Ancestor->getTitle()); ?></a><?php endforeach; ?><?php echo $this->localize($Album->getTitle()); ?>
@@ -42,7 +42,7 @@
 <?php endif; ?>
 <?php if ($PreviewImage = $Album->getPreviewImage()): ?>
 							<div class="preview-image">
-								<a href="<?php echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<?php echo sprintf($imagePathPatterns['preview-image'], urldecode($PreviewImage->getFileName())); ?>" alt="<?php echo $this->localize($Album->getTitle()); ?>" title="<?php echo $this->localize($Album->getTitle()); ?>"/></a>
+								<a href="<?php echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><img src="<?php echo sprintf($imagePathPatterns['preview-image'], urldecode($PreviewImage->getFileName())); ?>" alt="<?php echo $this->localize($Album->getTitle()); ?>" title="<?php echo $this->localize($Album->getTitle()); ?>"></a>
 							</div>
 <?php endif; ?>
 						</li>
@@ -53,11 +53,11 @@
 					<ul class="images thumbnails">
 <?php foreach ($Images as $n => $Image): ?>
 						<li class="<?php echo ($n + 1) % 2 ? 'odd' : 'even'; ?><?php if (($n + 1) % 10 == 0) echo ' last-in-row'; ?> image thumbnail">
-							<a href="<?php echo sprintf($imagePathPatterns['slide'], urldecode($Image->getFileName())); ?>" title="<?php echo $Image->getTitle(); ?>"><img src="<?php echo sprintf($imagePathPatterns['thumbnail'], urldecode($Image->getFileName())); ?>" alt="<?php echo $Image->getTitle(); ?>" title="<?php echo $Image->getTitle(); ?>"/></a>
+							<a href="<?php echo sprintf($imagePathPatterns['slide'], urldecode($Image->getFileName())); ?>" title="<?php echo $Image->getTitle(); ?>"><img src="<?php echo sprintf($imagePathPatterns['thumbnail'], urldecode($Image->getFileName())); ?>" alt="<?php echo $Image->getTitle(); ?>" title="<?php echo $Image->getTitle(); ?>"></a>
 						</li>
 <?php endforeach; ?>
 					</ul>
 <?php endif; ?>
 				</div>
-			</div>
+			</article>
 <?php $this->displayView('components/footer.php'); ?>
