@@ -39,7 +39,7 @@ li {
 	width: 900px;
 }
 
-#head {
+#header {
 	background-color: rgb(255, 255, 255);
 }
 
@@ -230,7 +230,7 @@ li {
 	width: 40px;
 }
 
-#foot {
+#footer {
 	background-color: rgb(255, 255, 255);
 	bottom: 0;
 	height: 34px;

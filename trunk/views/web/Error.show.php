@@ -1,5 +1,5 @@
 <?php $this->displayView('components/header.php'); ?>
-			<div id="body">
+			<article id="body">
 <?php $fields = array('Message'); if ($this->getApplication()->getConfiguration('debugMode')) $fields = array_merge($fields, array('Details', 'Trace')); ?>
 <?php foreach ($fields as $n => $field): ?>
 				<div class="<?php if ($n + 1 == count($fields)) echo 'last '; echo $n % 2 ? 'odd' : 'even'; ?>">
@@ -15,5 +15,5 @@
 					<p>&nbsp;</p>
 				</div>
 <?php endforeach; ?>
-			</div>
+			</article>
 <?php $this->displayView('components/footer.php'); ?>
