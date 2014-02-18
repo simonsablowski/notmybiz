@@ -32,7 +32,9 @@ $configuration['Localization'] = array(
 $configuration['Request'] = array(
 	'segmentSeparator' => ':',
 	'defaultQuery' => 'Gallery:show:',
-	'aliasQueries' => array()
+	'aliasQueries' => array(
+		'(disclaimer)' => 'Static:show:$1'
+	)
 );
 
 $configuration['Image'] = array(
