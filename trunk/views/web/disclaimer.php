@@ -41,34 +41,27 @@
 
 					</p>
 					<p>
+						<?php echo $this->localize('disclaimer-block5-paragraph2'); ?>
+
+					</p>
+					<p>
+						<?php echo $this->localize('disclaimer-block5-paragraph3'); ?>
+
+					</p>
+					<p>
+						<?php echo $this->localize('disclaimer-block5-paragraph4'); ?>
+
+					</p>
+					<p>
 						<strong><?php echo $this->localize('disclaimer-block6-title'); ?></strong>
-					</p>
-					<p>
-						<?php echo $this->localize('disclaimer-block6-paragraph1'); ?>
-
-					</p>
-					<p>
-						<?php echo $this->localize('disclaimer-block6-paragraph2'); ?>
-
-					</p>
-					<p>
-						<?php echo $this->localize('disclaimer-block6-paragraph3'); ?>
-
-					</p>
-					<p>
-						<?php echo $this->localize('disclaimer-block6-paragraph4'); ?>
-
-					</p>
-					<p>
-						<strong><?php echo $this->localize('disclaimer-block7-title'); ?></strong>
 					</p>
 					<ul>
 						<li>
-							<?php echo $this->localize('disclaimer-block7-paragraph1'); ?>
+							<?php echo $this->localize('disclaimer-block6-paragraph1'); ?>
 
 						</li>
 						<li>
-							<?php echo $this->localize('disclaimer-block7-paragraph2'); ?>
+							<?php echo $this->localize('disclaimer-block6-paragraph2'); ?>
 
 						</li>
 					</ul>
