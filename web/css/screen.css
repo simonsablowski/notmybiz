@@ -121,23 +121,19 @@ li {
 	position: relative;
 }
 
-#gallery .albums .last-in-row {
-	margin-right: 0;
-}
-
 #gallery .albums .album .preview-image img {
 	background-color: rgb(196, 196, 196);
 	height: 280px;
 	width: 280px;
 }
 
-#gallery .images .image {
-	float: left;
-	margin: 0 9px 9px 0;
+#gallery .images .image, #gallery .images .image a, #gallery .images .image img {
+	height: 100px;
+	width: 100px;
 }
 
-#gallery .images .last-in-row {
-	margin-right: 0;
+#gallery .images .image {
+	float: left;
 }
 
 #gallery .images .image a {
@@ -146,8 +142,6 @@ li {
 
 #gallery .images .image img {
 	background-color: rgb(196, 196, 196);
-	height: 81px;
-	width: 81px;
 }
 
 #gallery .albums:after, #gallery .images:after {

@@ -52,7 +52,7 @@
 <?php if (count($Images)): ?>
 					<ul class="images thumbnails">
 <?php foreach ($Images as $n => $Image): ?>
-						<li class="<?php echo ($n + 1) % 2 ? 'odd' : 'even'; ?><?php if (($n + 1) % 10 == 0) echo ' last-in-row'; ?> image thumbnail">
+						<li class="<?php echo ($n + 1) % 2 ? 'odd' : 'even'; ?> image thumbnail">
 							<a href="<?php echo sprintf($imagePathPatterns['slide'], urlencode($Image->getFileName())); ?>" title="<?php echo $Image->getTitle(); ?>"><img src="<?php echo sprintf($imagePathPatterns['thumbnail'], urlencode($Image->getFileName())); ?>" alt="<?php echo $Image->getTitle(); ?>" title="<?php echo $Image->getTitle(); ?>"></a>
 						</li>
 <?php endforeach; ?>
