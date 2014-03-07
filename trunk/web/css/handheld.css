@@ -17,6 +17,7 @@
 }
 
 #slideshow .current .image, #slideshow .controls .previous, #slideshow .controls .next {
+	height: auto;
 	margin-top: 0;
 }
 
