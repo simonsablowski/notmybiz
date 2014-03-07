@@ -20,6 +20,10 @@
 	margin-top: 0;
 }
 
+#slideshow .current .image img {
+	max-width: 100%;
+}
+
 #slideshow .controls .close {
 	height: 60px;
 	width: 60px;
