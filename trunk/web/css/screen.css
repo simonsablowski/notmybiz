@@ -162,7 +162,6 @@ li {
 }
 
 #slideshow .current .image, #slideshow .controls .previous, #slideshow .controls .next {
-	height: 500px;
 	margin: 57px 0 0;
 }
 
