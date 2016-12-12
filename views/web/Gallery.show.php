@@ -34,7 +34,7 @@
 						<li class="<?php echo ($n + 1) % 2 ? 'odd' : 'even'; ?><?php if (($n + 1) % ($numberAlbums < 3 ? 2 : 3) == 0) echo ' last-in-row'; ?> album">
 							<h<?php echo $isAlbum ? 3 : 2; ?>>
 								<a href="<?php echo $this->getApplication()->getConfiguration('basePath') . $Album->getKey(); ?>"><?php echo $this->localize($Album->getTitle()); ?></a>
-							</h3>
+							</h<?php echo $isAlbum ? 3 : 2; ?>>
 <?php if ($Album->getDescription()): ?>
 							<p>
 								<?php echo $album->getDescription(); ?>
