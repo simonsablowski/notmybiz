@@ -40,11 +40,11 @@ $configuration['Request'] = array(
 $configuration['Image'] = array(
 	'parameterSets' => array(
 		array(
-			'width' => 100,
-			'height' => 100,
+			'width' => 280,
+			'height' => 280,
 			'crop' => true,
-			'grey' => true,
-			'quality' => 70
+			'grey' => false,
+			'quality' => 80
 		),
 		array(
 			'width' => 280,
